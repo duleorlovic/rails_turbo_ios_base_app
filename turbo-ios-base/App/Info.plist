@@ -30,9 +30,9 @@
 	<key>TURBO_URL</key>
 	<dict>
 		<key>development</key>
-		<string>http://localhost:3000</string>
+		<string>https://turbo-ios-base-rails-7.herokuapp.com</string>
 		<key>production</key>
-		<string>https://my.rails-app.com</string>
+		<string>https://turbo-ios-base-rails-7.herokuapp.com</string>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
