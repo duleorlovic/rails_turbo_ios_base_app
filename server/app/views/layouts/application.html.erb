@@ -15,12 +15,20 @@
   <body>
     <% unless turbo? %>
       <nav class="d-block">
-        Navigation
-        <%# render 'partials/navbar' %>
+        Web Navigation (hidden on mobile)
       </nav>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p data-test="notice" class="notice"><%= notice %></p>
+    <p data-test="alert" class="alert"><%= alert %></p>
+    <%= link_to "Root", root_path %>
+    <%= link_to "My Profile", pages_my_profile_path %>
+    <% if current_user.present? %>
+      <span data-test="current-user-email""><%= current_user.email %></span<>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, form_class: "d-inline" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
